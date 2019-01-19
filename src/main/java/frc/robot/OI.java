@@ -22,4 +22,18 @@ public class OI {
   public OI(){
     arm = new JoystickButton(driveJoyLeft, 1);
   }
+  
+  public double getDriveJoyLeftX(){
+    return driveJoyLeft.getX();
+  }
+  public double getDriveJoyLeftY(){
+    return driveJoyLeft.getY();
+  }
+  public double getDriveJoyRightX(){
+    return driveJoyRight.getX();
+  }
+  public double getDriveJoyRightY(){
+    return driveJoyRight.getY();
+  }
+
 }

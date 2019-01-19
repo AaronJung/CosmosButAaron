@@ -35,15 +35,18 @@ public class Drive extends Subsystem {
         m_rightDriveSlave2 = new TalonSRX(RobotMap.rightDriveslave2ID);
 
         m_leftDriveSlave1.follow(m_leftDriveMaster);
+        m_leftDriveSlave2.follow(m_leftDriveMaster);
+        
+        m_rightDriveSlave1.follow(m_rightDriveMaster);
+        m_rightDriveSlave2.follow(m_rightDriveMaster);
     }
 
     public void setDrivePower (double percentLeft, double percentRight) {
         m_leftDriveMaster.set(ControlMode.PercentOutput, percentLeft);
         m_rightDriveMaster.set(ControlMode.PercentOutput, percentRight);
     }
-    
+
     @Override
     protected void initDefaultCommand() {
-
     }
 }
