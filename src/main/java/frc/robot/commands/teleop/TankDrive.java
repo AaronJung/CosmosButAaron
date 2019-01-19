@@ -10,8 +10,6 @@ package frc.robot.commands.teleop;
 import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
-import frc.robot.OI;
-
 public class TankDrive extends Command {
   public TankDrive() {
     requires(Robot.drive);
@@ -23,8 +21,8 @@ public class TankDrive extends Command {
 
   @Override
   protected void execute() {
-    double leftPow = Robot.m_oi.getDriveJoyLeftY();
-    double rightPow = Robot.m_oi.getDriveJoyRightY();
+    // double leftPow = Robot.m_oi.getDriveJoyLeftY();
+    // double rightPow = Robot.m_oi.getDriveJoyRightY();
   }
 
   @Override

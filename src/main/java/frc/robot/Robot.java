@@ -16,6 +16,8 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.Drive;
 import frc.robot.subsystems.ExampleSubsystem;
 
+import frc.robot.subsystems.Drive;
+
 // import com.ctre.CANTalon;
 // import com.ctre.CANTalon.FeedbackDevice;
 // import com.ctre.CANTalon.TalonControlMode;
@@ -84,6 +86,10 @@ public class Robot extends TimedRobot {
   @Override
   public void teleopPeriodic() {
     Scheduler.getInstance().run();
+
+    double percentLeft = Robot.m_oi.getDriveJoyLeftY();
+    double percentRight = Robot.m_oi.getDriveJoyRightY();
+    drive.setDrivePower(percentLeft, percentRight);
   }
 
   @Override
