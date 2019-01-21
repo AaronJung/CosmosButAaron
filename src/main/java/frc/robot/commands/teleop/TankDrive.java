@@ -21,8 +21,8 @@ public class TankDrive extends Command {
 
   @Override
   protected void execute() {
-    // double leftPow = Robot.m_oi.getDriveJoyLeftY();
-    // double rightPow = Robot.m_oi.getDriveJoyRightY();
+    double leftPow = Robot.m_oi.getDriveJoyLeftY();
+    double rightPow = Robot.m_oi.getDriveJoyRightY();
   }
 
   @Override
@@ -38,3 +38,4 @@ public class TankDrive extends Command {
   protected void interrupted() {
   }
 }
+// you honesly shouldn't be copying from me

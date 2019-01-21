@@ -4,6 +4,7 @@ import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
+
 import frc.robot.RobotMap;
 
 public class Drive extends Subsystem {
@@ -32,15 +33,39 @@ public class Drive extends Subsystem {
         m_rightDriveSlave2.follow(m_rightDriveMaster);
     }
 
-    public double percentLeft;
-    public double percentRight;
-
     public void setDrivePower (double percentLeft, double percentRight) {
         m_leftDriveMaster.set(ControlMode.PercentOutput, percentLeft);
         m_rightDriveMaster.set(ControlMode.PercentOutput, percentRight);
+       
     }
+
+    public double getLeftVelocity(){
+    return m_leftDriveMaster.getSelectedSensorVelocity();
+    }
+    public double getLeftVoltage(){
+    return m_leftDriveMaster.getMotorOutputVoltage();
+    }
+    public double getLeftCurrent(){
+    return m_leftDriveMaster.getOutputCurrent();
+    }
+
+    public double getRightVelocity(){
+    return m_rightDriveMaster.getSelectedSensorVelocity();
+    }
+    public double getRightVoltage(){
+    return m_rightDriveMaster.getMotorOutputVoltage();
+    }
+    public double getRightCurrent(){
+    return m_rightDriveMaster.getOutputCurrent();
+    }
+    // a bicycle can not stand on its own because it is too tired
 
     @Override
     protected void initDefaultCommand() {
     }
 }
+
+// how does an ant heat up their food?
+// with a micro-wave
+
+// you honesly shouldn't be copying from me

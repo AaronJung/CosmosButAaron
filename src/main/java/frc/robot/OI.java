@@ -1,26 +1,27 @@
-/*----------------------------------------------------------------------------*/
-/* Copyright (c) 2017-2018 FIRST. All Rights Reserved.                        */
-/* Open Source Software - may be modified and shared by FRC teams. The code   */
-/* must be accompanied by the FIRST BSD license file in the root directory of */
-/* the project.                                                               */
-/*----------------------------------------------------------------------------*/
-
 package frc.robot;
 
 
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
+import frc.robot.commands.teleop.LiftArm;
+import frc.robot.subsystems.Arm;
+import frc.robot.subsystems.Drive;
 
 public class OI {
+  public static Arm arm = new Arm();
+  public static Drive drive = new Drive();
 
   public Joystick driveJoyLeft = new Joystick(0);
   public Joystick driveJoyRight = new Joystick(1);
 
-  public JoystickButton arm;
+  public Button btnArm = new JoystickButton(driveJoyRight, 1);
 
   public OI(){
-    arm = new JoystickButton(driveJoyLeft, 1);
+    btnArm.toggleWhenPressed(new LiftArm());
+
+    //arm = new JoystickButton(driveJoyLeft, 1);
   }
   
   public double getDriveJoyLeftX(){
@@ -35,5 +36,7 @@ public class OI {
   public double getDriveJoyRightY(){
     return driveJoyRight.getY();
   }
-
 }
+// time flies like an arrow and a fruit flies like a banana
+
+// you honesly shouldn't be copying from me
