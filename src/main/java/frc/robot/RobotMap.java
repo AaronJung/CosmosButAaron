@@ -12,7 +12,7 @@ public class RobotMap {
   public static int armID = 6;
 }
 
-// how does 4 bees fly?
+// how long does 4 bees fly?
 // i don't know. it was bee-4 my time
 
 // you honesly shouldn't be copying from me

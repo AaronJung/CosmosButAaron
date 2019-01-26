@@ -25,7 +25,7 @@ public class LiftArm extends Command {
 
   @Override
   protected void execute() {
-      Robot.arm.liftUp();
+    Robot.arm.liftUp();
   }
 
   @Override

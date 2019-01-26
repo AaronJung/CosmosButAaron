@@ -5,6 +5,8 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import edu.wpi.first.wpilibj.Timer;
+
 import frc.robot.RobotMap;
 
 public class Arm extends Subsystem {
@@ -36,9 +38,10 @@ public class Arm extends Subsystem {
         int target = 90;
 
         chooseUpOrDown();
-        
+
         int error = (int) (target - getArmPosition());
         while(error <= 0 && getArmVoltage() <= voltageLimit){
+            // uod stands for "up or down" cuz like up starts with u and or starts with u and down starts with d that makes uod
             if(uod == 0){
                 neg = -1;
             }
@@ -62,7 +65,6 @@ public class Arm extends Subsystem {
 
     // what do you call a sad strawberry
     // berry depressed
-
     public double getArmPosition(){
         return m_arm.getSelectedSensorPosition();
     }
